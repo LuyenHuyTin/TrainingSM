@@ -1,6 +1,6 @@
 #include<bits/stdc++.h>
-#include</home/tindz/Cplus_ex/mini_prj/include/adminLogin.h>
-#include</home/tindz/Cplus_ex/mini_prj/include/FacultyLogin.h>
+#include</home/tindz/Cplus_ex/mini_prj/admin/adminLogin.h>
+#include</home/tindz/Cplus_ex/mini_prj/faculty/FacultyLogin.h>
 
 using namespace std;
 int main() {
@@ -13,11 +13,13 @@ int main() {
     cout << "\t\tPress 2 --> Faculty Login" << endl;
     cout << "\t\tPress 3 --> Exit" << endl;
     cout << "\nPlease Enter Your Choice : ";
-    Admin ad;
     cin >> choice;
-    switch(choice){
+    Admin *admin;
+    admin = Admin::getInstance();
+    switch(choice)
+    {
         case 1:
-            ad.adminLogin();
+            admin->adminLogin();
             break;
         case 2:
             FacultyLogin();

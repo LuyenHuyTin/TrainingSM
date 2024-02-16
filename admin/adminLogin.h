@@ -2,6 +2,13 @@
 using namespace std;
 class Admin {
 public: 
+    static Admin *getInstance()
+    {
+        if(nullptr == mInstancePtr){
+            mInstancePtr = new Admin();
+        }
+        return mInstancePtr;
+    }
     void createScheldule();
 
     void updateSchedule();
@@ -14,5 +21,7 @@ public:
     void adminLogin();
     void selectModule();
 private:
-    int choice;    
+    Admin() {}
+    int choice;  
+    static Admin* mInstancePtr;  
 };
